@@ -1,0 +1,31 @@
+// Create a file (firebase.js) to configure and export the Firebase object.
+
+// Import the database object, and any required Firebase modlues at the top of the main app file (app.js)
+
+// Call getDatabase() and ref() to create a reference to the Firebase database
+    // Define onValue(), remove(), filter(), update() in the firebase import
+
+// Use document.querySelector() or appropriate target method to get  JS objects:
+    //  Three that point to the ULs that represent different progress status where the tasks will be displayed accordingly.
+    //  Three that point to the input of the new task form (task description, due date, category)
+    //  Five types of buttons:
+        // One that point to the subission of the new task
+        // One that save the category of the color code.
+        // One that point to changing the progress status of task from "New task" to "In-progress" *
+        // One that point to changing the progress status of task from "In-progress" to "Completed" *
+        // One that deletes completed task *
+
+
+// We divide our JS codes into 5 module
+    // 1) Category name legend
+    // 2) Capture user's input for new tasks, and update() to the database
+    // 3) onValue() to listen for any changes in the database, then filter() data and display onto their own UL element -> newTasks
+       // 3a) Getting the color value of task from firebase, and change the task’s background color
+
+
+// Stretch goalS:
+    // 3b) onValue() to listen for any changes in the database, then filter() data and display onto their own UL element –> inProgress tasks and Completed tasks
+    // 4) addEventListener() to the buttons that will update() the progress value of the status(key) of the tasks
+    // 5) Delete completed tasks with a button to remove() data from the database
+
+

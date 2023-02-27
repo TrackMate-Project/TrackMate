@@ -1,0 +1,30 @@
+// Category Legend: an object
+    // category = {
+    //     Yellow: "Daily",
+    //     Pink: "Work",
+    //     Blue: "Self-care"}
+
+// Tasks: an array
+    // taskArray = [ 
+    // {description: " ",
+    // dueDate: ddmmyy,
+    // category: yellow,       *
+    // status: newTask},
+    
+    // {description: " ",
+    // dueDate: ddmmyy,
+    // category: pink,           *
+    // status: newTask},
+
+    // {description: " ",
+    // dueDate: ddmmyy,
+    // category: blue,         *
+    // status: inProgress},
+
+    // {description: " ",
+    // dueDate: ddmmyy,
+    // category: yellow,      *
+    // status: completed}
+    // ] 
+
+    // *category key could be the name of the color or a hex code, depending on the method chosen to change the background color of tasks
