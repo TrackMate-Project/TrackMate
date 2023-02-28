@@ -9,18 +9,89 @@
 </head>
 <body>
     <header>
+        <div class="wrapper">
+            <h1>OUR APP</h1>
+        </div>
+        <!-- ASIDE TO HAVE FLEX COLUMN -->
+        <aside class="formColorContainer wrapper">
+            <h2>Assign a color code as you wish!</h2>
+            <!-- DIV FORM CONTAINER TO HAVE FLEX ROW -->
+            <div class="formColorFlex">
+            <!-- FORM TO SUBMIT COLOR-1 -->
+                <form action="#" method="#" class="color1Form">
+                    <div class="color1Div">
+                    <label for="color1" class="sr-only">Category 1</label>
+                    <input type="text" id="color1" placeholder="Category 1">
+                    <button class="colorLegendBut" id="color1But"></button>
+                </form>
+                <!-- FORM TO SUBMIT COLOR-2 -->
+                <form action="#" method="#" class="color2Form">
+                    <div class="color2Div"></div>
+                    <label for="color2" class="sr-only">Category 2</label>
+                    <input type="text" id="color2" placeholder="Category 2">
+                    <button class="colorLegendBut" id="color2But"></button>
+                </form>
+                <!-- FORM TO SUBMIT COLOR-3 -->
+                <form action="#" method="#" class="color3Form">
+                    <div class="color3Div"></div>
+                    <label for="color3" class="sr-only">Category 3</label>
+                    <input type="text" id="color3" placeholder="Category 3">
+                    <button class="colorLegendBut" id="color3But"></button>
+                </form>
+            </div>
 
+        </aside>
 
     </header>
 
-    <main>
+    <main class="wrapper">
+        <!-- SECTION TO SUBMIT AND DISPLAY NEW TASKS -->
+        <section class="newTaskBox">
+            <h3>NEW TASKS</h3>
+            <form action="#" method="#">
+                <label for="description" class="sr-only">Enter a new task here</label>
+                <input type="text" id="description" placeholder="Enter a new task here">
+                
+                <label for="dueDate" class="sr-only">Enter a due date here</label>
+                <input type="text" id="dueDate" placeholder="Enter a due date here">
+                
+                <!-- <>Choose a color: -->
+                <label for="color1" class="sr-only"></label>
+                <input type="radio" id="color1" value="color1">
+                <label for="color2" class="sr-only"></label>
+                <input type="radio" id="color2" value="color2">
+                <label for="color3" class="sr-only"></label>
+                <input type="radio" id="color3" value="color3">
+                
+                <button type="sumbit">Save it!</button>
+            </form>
+            <ul class="newTaskList">
+                <!-- new tasks will be displayed here after submitted -->
+            </ul>
+        </section>
 
+        <!-- SECTION TO DISPLAY IN-PROGRESS TASKS -->
+        <section class="inProgressBox">
+            <h3>IN-PROGRESS TASKS</h3>
+            <ul class="inProgressTaskList">
+            <!-- button from newTaskList will move li here -->
+            </ul>
+        </section>
+
+        <!-- THIS SECTION IS STRETCH GOAL // COMPLETED TASKS -->
+        <!-- <section class="completedTaskBox">
+            <h3>COMPLETED TASKS</h3>
+            <ul class="completedTaskList">
+                button from in-progress task list will move li here
+            </ul>
+        </section> -->
 
     </main>
 
     <footer>
-
-        
+        <div class="wrapper">
+            <p>Copyright Katie & Selda -- Created at <a href="https://junocollege.com/">Juno College</a></p>
+        </div>
     </footer>
 
     <script type="module" src="./javascript/script.js"></script>
