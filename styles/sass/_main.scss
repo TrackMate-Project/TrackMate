@@ -1,0 +1,41 @@
+@use "./variables" as *;
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    section {
+        width: 32%;
+        padding: 10px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        h3 {
+            margin: 0;
+            text-align: center;
+        }
+    }
+}
+
+section.newTaskBox{
+    form {
+        order: 3;
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin: 5px 0;
+        }
+
+        fieldset {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}
