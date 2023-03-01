@@ -1,0 +1,92 @@
+@use 'variables' as *;
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.mainHeading {
+    background-color: $background;
+    font-family: $baseFont;
+    font-size: 1.1rem;
+    border-radius: 15px;
+    margin: 50px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+aside {
+    h2{
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+    background-color: $background;
+    font-family: $baseFont;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formColorFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+
+    .color1Form,
+    .color2Form,
+    .color3Form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+
+        input {
+            width: 150px;
+            // position: relative;
+        }
+        input::placeholder{
+            color: $placeholderColor;
+            font-size: 0.75rem;
+            font-family: $baseFont;
+        }
+    }
+    .colorLegendBut{
+        font-size: 0.75rem;
+        // position: absolute;
+    }
+
+    .color1Div,
+    .color2Div,
+    .color3Div {
+        height: 30px;
+        width: 30px;
+    }
+    .color1Div{
+        background-color: $color1;
+        border: 1px solid black;
+    }
+    .color2Div{
+        background-color: $color2;
+        border: 1px solid black;
+    }
+    .color3Div{
+        background-color: $color3;
+        border: 1px solid black;
+    }
+}
+
+
+// Color submit buttons to be changed with icons
+// color submit buttons to be positioned inside the input bar
+// Media Query partial created. The form container will change flex direction to column for mobile devices

@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+footer {
+    width: 70%;
+    margin: 0 auto;
+    div {
+        background-color: $background;
+        border-radius: 15px;
+        // width: 70%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
