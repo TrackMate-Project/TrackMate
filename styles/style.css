@@ -236,6 +236,11 @@ li {
   padding: 0;
 }
 
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: rgb(82, 75, 69);
+}
+
 .wrapper {
   width: 85%;
   max-width: 1200px;
@@ -244,6 +249,48 @@ li {
 
 a {
   text-decoration: none;
+}
+
+input::-webkit-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  color: #B1B1B1;
+  font-size: 0.75rem;
+}
+
+input::-moz-placeholder {
+  font-family: "Raleway", sans-serif;
+  color: #B1B1B1;
+  font-size: 0.75rem;
+}
+
+input:-ms-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  color: #B1B1B1;
+  font-size: 0.75rem;
+}
+
+input::-ms-input-placeholder {
+  font-family: "Raleway", sans-serif;
+  color: #B1B1B1;
+  font-size: 0.75rem;
+}
+
+input::placeholder {
+  font-family: "Raleway", sans-serif;
+  color: #B1B1B1;
+  font-size: 0.75rem;
+}
+
+input[type=radio] {
+  accent-color: red;
+}
+
+input[type=radio]:before {
+  accent-color: red;
+}
+
+input[type=radio]::checked {
+  accent-color: black;
 }
 
 button {
@@ -258,7 +305,127 @@ button {
   border-radius: 10px;
 }
 
+input.color1 {
+  background-color: #FDFFAA;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.mainHeading {
+  background-color: #E7DED7;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  margin: 50px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside {
+  background-color: #E7DED7;
+  font-family: "Raleway", sans-serif;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+aside h2 {
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.formColorFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+}
+.formColorFlex .color1Form,
+.formColorFlex .color2Form,
+.formColorFlex .color3Form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+.formColorFlex .color1Form input,
+.formColorFlex .color2Form input,
+.formColorFlex .color3Form input {
+  width: 150px;
+}
+.formColorFlex .colorLegendBut {
+  font-size: 0.75rem;
+}
+.formColorFlex .color1Div,
+.formColorFlex .color2Div,
+.formColorFlex .color3Div {
+  height: 30px;
+  width: 30px;
+}
+.formColorFlex .color1Div {
+  background-color: #FDFFAA;
+  border: 1px solid black;
+}
+.formColorFlex .color2Div {
+  background-color: #FFAAEC;
+  border: 1px solid black;
+}
+.formColorFlex .color3Div {
+  background-color: #A8D5FF;
+  border: 1px solid black;
+}
+
 main {
+  padding: 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,8 +441,7 @@ main section {
   width: 32%;
   min-height: 500px;
   padding: 10px;
-  border: 1px solid black;
-  border-radius: 12px;
+  border-radius: 15px;
   background-color: #E7DED7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -337,4 +503,23 @@ div.newTaskFlex form fieldset {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+footer {
+  width: 70%;
+  margin: 0 auto;
+}
+footer div {
+  background-color: #E7DED7;
+  border-radius: 15px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

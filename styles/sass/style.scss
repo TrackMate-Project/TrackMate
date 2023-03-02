@@ -1,8 +1,10 @@
 @use 'variables' as *;
-@use 'globalstyles';
+@use "./globalstyles";
 @use 'buttons';
 @use 'header';
 @use 'main';
 @use 'footer';
+@use 'media-queries';
+
 
 
