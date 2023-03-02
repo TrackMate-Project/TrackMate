@@ -7,11 +7,15 @@ main {
 
     section {
         width: 32%;
+        min-height: 500px;
         padding: 10px;
         border: 1px solid black;
+        border-radius: 12px;
+        background-color: $background;
         display: flex;
         flex-direction: column;
         align-content: center;
+        
         h3 {
             margin: 0;
             text-align: center;
@@ -19,18 +23,29 @@ main {
     }
 }
 
-section.newTaskBox{
+div.newTaskFlex {
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    
     form {
-        order: 3;
         width: 90%;
         margin: 0 auto;
         padding: 10px;
+        background-color: $newTaskFormBack;
         border: 1px solid black;
+        border-radius: 12px;
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         input {
             margin: 5px 0;
+            width: 100%;
+            border: 1px solid $inputColor;
+            border-radius: 10px;
+            background-color: $inputColor;
         }
 
         fieldset {
@@ -39,3 +54,4 @@ section.newTaskBox{
         }
     }
 }
+

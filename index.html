@@ -53,28 +53,33 @@
         <!-- SECTION TO SUBMIT AND DISPLAY NEW TASKS -->
         <section class="newTaskBox">
             <h3>NEW TASKS</h3>
-            <form action="#" method="#">
-                <label for="description" class="sr-only">Enter a new task here</label>
-                <input type="text" id="description" placeholder="Enter a new task here">
-                
-                <label for="dueDate" class="sr-only">Enter a due date here</label>
-                <input type="text" id="dueDate" placeholder="Enter a due date here">
-
-                <fieldset>
-                    <legend>Choose a color:</legend>
-                    <label for="color1" class="sr-only"></label>
-                    <input type="radio" id="color1" value="color1">
-                    <label for="color2" class="sr-only"></label>
-                    <input type="radio" id="color2" value="color2">
-                    <label for="color3" class="sr-only"></label>
-                    <input type="radio" id="color3" value="color3">
-                </fieldset>
-                
-                <button type="sumbit">Save it!</button>
-            </form>
-            <ul class="newTaskList">
-                <!-- new tasks will be displayed here after submitted -->
-            </ul>
+            <div class="newTaskFlex">
+                <form action="#" method="#">
+                    <label for="description" class="sr-only">Enter a new task here</label>
+                    <input type="text" id="description" placeholder="Enter a new task here">
+                    
+                    <label for="dueDate" class="sr-only">Enter a due date here</label>
+                    <input type="text" id="dueDate" placeholder="Enter a due date here">
+    
+                    <fieldset>
+                        <legend>Choose a color:</legend>
+                        <label for="color1" class="sr-only"></label>
+                        <input type="radio" id="color1" value="color1" name="chooseColor">
+                        <label for="color2" class="sr-only"></label>
+                        <input type="radio" id="color2" value="color2" name="chooseColor">
+                        <label for="color3" class="sr-only"></label>
+                        <input type="radio" id="color3" value="color3" name="chooseColor">
+                    </fieldset>
+                    
+                    <button id="saveTaskBut" type="sumbit">Save it!</button>
+                </form>
+                <ul class="newTaskList">
+                    <!-- new tasks will be displayed here after submitted -->
+                    <!-- <li>
+                        <p>Skin-care Routine<br>2023-03-12</p>
+                    </li> -->
+                </ul>
+            </div>
         </section>
 
         <!-- SECTION TO DISPLAY IN-PROGRESS TASKS -->

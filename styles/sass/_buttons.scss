@@ -1,0 +1,13 @@
+@use "./variables" as *;
+
+button {
+    cursor: pointer;
+}
+
+#saveTaskBut {
+    width: 112px;
+    background-color: $saveTaskButColor;
+    margin-top: 5px;
+    border: 1px solid $saveTaskButColor;
+    border-radius: 10px;
+}
