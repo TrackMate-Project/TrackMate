@@ -47,7 +47,7 @@ colorButtons.forEach(function(individualButton){
             console.log(buttonValue);
         
             const description = {
-                buttonValue : `${colorInput}`
+                [buttonValue] : `${colorInput}`
             };
             console.log(description);
             update(categoryRef, description);
@@ -57,6 +57,10 @@ colorButtons.forEach(function(individualButton){
         }
         })
 })
+
+// it's only targeting color1, it should target them all
+
+
 
 // Pseudocode for Color Category
 // Define variable for button, and user input
