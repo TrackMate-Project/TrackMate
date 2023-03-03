@@ -1,61 +1,50 @@
 import app from "./firebase.js"
-import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+import { getDatabase, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 
 const database = getDatabase(app);
 const dbRef = ref(database);
 
-const colorRef = ref(database, 'category')
-// console.log(colorRef);
-
-// const color1But = document.querySelector('#color1But');
-// const color2But = document.querySelector('#color2But');
-// const color3But = document.querySelector('#color3But');
+const categoryRef = ref(database, `/category`);
 
 const colorButtons = document.querySelectorAll('.colorLegendBut');
 
-const color1Input = document.querySelector('#color1');
-const color2Input = document.querySelector('#color2');
-const color3Input = document.querySelector('#color3');
-
-const categoryRef = ref(database, `/category`);
-
-// color1But.addEventListener('click', function(){
-//     // .preventDefault();
-
-//     const colorInput = color1Input.value.trim();
-    
-//     if (colorInput !== ""){
-//         const description = {
-//             color1: `${colorInput}`
-//         }
-//         console.log(description);
-//         update(categoryRef, description);
-//     } else {
-//         alert('Please enter a valid description! Do not leave the input empty')
-//     }
-// })
+const categoryInput = document.querySelectorAll('.categoryInput');
 
 colorButtons.forEach(function(individualButton){
     individualButton.addEventListener('click', function(){
-        const buttonValue = this.value;
-        console.log(typeof buttonValue);
-        console.log(buttonValue);
+    console.log(this)
+    const buttonValue = this.value;
 
-        const colorInput = color1Input.value.trim();
-    
-        if (colorInput !== ""){ 
-            console.log(buttonValue);
+    const colorInput = this.form[0].value.trim();
+
+    if (colorInput !== ""){ 
+        const description = {
+            [buttonValue] : `${colorInput}`
+        };
+        console.log(description);
+        update(categoryRef, description);
         
-            const description = {
-                buttonValue : `${colorInput}`
-            };
-            console.log(description);
-            update(categoryRef, description);
-            
-        } else {
-            alert('Please enter a valid description! Do not leave the input empty')
+    } else {
+        alert('Please enter a valid description! Do not leave the input empty')
+    }
+    })
+})
+
+onValue(categoryRef, function(data){
+    const ourData = data.val();
+    console.log(ourData);
+    console.log(categoryInput);
+    
+    categoryInput.forEach(function(input){
+        for (let key in ourData){
+            console.log(`${key}:${ourData[key]}`)
+            if (key === input.id){
+                input.placeholder = ourData[key]
+            }
         }
-        })
+        console.log(input)
+    }
+    )
 })
 
 // Pseudocode for Color Category
