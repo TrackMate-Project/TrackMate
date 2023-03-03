@@ -281,18 +281,6 @@ input::placeholder {
   font-size: 0.75rem;
 }
 
-input[type=radio] {
-  accent-color: red;
-}
-
-input[type=radio]:before {
-  accent-color: red;
-}
-
-input[type=radio]::checked {
-  accent-color: black;
-}
-
 button {
   cursor: pointer;
 }
@@ -305,8 +293,40 @@ button {
   border-radius: 10px;
 }
 
-input.color1 {
-  background-color: #FDFFAA;
+#colorOne {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  border: 8px solid #FDFFAA;
+  outline: 1px solid #FDFFAA;
+}
+#colorOne:checked, #colorOne:focus {
+  outline-color: green;
+}
+
+#colorTwo {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  border: 8px solid #FFAAEC;
+  outline: 1px solid #FFAAEC;
+}
+#colorTwo:checked, #colorTwo:focus {
+  outline-color: green;
+}
+
+#colorThree {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  border: 8px solid #A8D5FF;
+  outline: 1px solid #A8D5FF;
+}
+#colorThree:checked, #colorThree:focus {
+  outline-color: green;
 }
 
 header {
@@ -402,9 +422,6 @@ aside h2 {
 .formColorFlex .color3Form input {
   width: 150px;
 }
-.formColorFlex .colorLegendBut {
-  font-size: 0.75rem;
-}
 .formColorFlex .color1Div,
 .formColorFlex .color2Div,
 .formColorFlex .color3Div {
@@ -489,7 +506,7 @@ div.newTaskFlex form {
       -ms-flex-align: center;
           align-items: center;
 }
-div.newTaskFlex form input {
+div.newTaskFlex form input[type=text] {
   margin: 5px 0;
   width: 100%;
   border: 1px solid #ffffff;
