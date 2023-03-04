@@ -63,9 +63,8 @@ onValue(taskRef, function(taskObj){
             const definition = taskProperties[key].definition;
             const dueDate = taskProperties[key].dueDate;
             const colorTag = taskProperties[key].colorTag;
-            // console.log(definition, dueDate, colorTag);
 
-
+            
             const li = document.createElement('li');
             const pDate = document.createElement('p');
             const pTask = document.createElement('p');
@@ -74,20 +73,13 @@ onValue(taskRef, function(taskObj){
             console.log(colorTag);
             
             li.innerHTML = 
-            `<p>${definition}</p> 
+            `<div class="pContainer"><p>${definition}</p> 
             <p>${dueDate}</p>
+            </div>
             <button>icon`
 
             newTaskUl.append(li);
 
-        //     if (colorTag === color1) {
-        //         li.classList.toggle('yellowBackground')
-        //     } else if (colorTag === color2) {
-        //         li.classList.toggle('pinkBackground')
-        //     } else {
-        //         li.classList.toggle('blueBackground')
-        //     }
-        // }
     }
 }
     })
