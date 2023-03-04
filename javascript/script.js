@@ -1,5 +1,5 @@
 import app from "./firebase.js"
-import { getDatabase, ref, update, onValue, push } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+import { getDatabase, ref, update, onValue, push, remove } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 
 const database = getDatabase(app);
 const dbRef = ref(database);
@@ -14,6 +14,7 @@ const completedTaskUl = document.querySelector('.completedTaskList')
 const colorButtons = document.querySelectorAll('.colorLegendBut');
 const categoryInput = document.querySelectorAll('.categoryInput');
 
+// COLOR LEGEND
 colorButtons.forEach(function(individualButton){
     individualButton.addEventListener('click', function(){
     console.log(this)
@@ -54,6 +55,8 @@ colorButtons.forEach(function(individualButton){
     // Add event listener to the task form submit, and add the user input to database
     const saveTask = document.querySelector('#submitTask');
 
+
+// NEW TASK INPUT
 saveTask.addEventListener('submit', function(event){
     event.preventDefault();
 
@@ -135,7 +138,7 @@ onValue(taskRef, function(taskObj){
     }
 })
 
-    // <i class="fa-solid fa-trash-can" ></i>
+
 
 // Button event listeners
 newTaskUl.addEventListener('click', function(event){
@@ -155,5 +158,16 @@ inProgressTaskUl.addEventListener('click', function(event){
         const individualTaskRef = ref(database,`/task/${buttonValue}`)
 
         update(individualTaskRef, statusChange)
+    }
+})
+
+
+// Remove those completed tasks!!
+completedTaskUl.addEventListener('click', function(event){
+    if (event.target.tagName === "I"){
+        const buttonValue = event.target.parentNode.value
+        const individualTaskRef = ref(database,`/task/${buttonValue}`)
+
+        remove(individualTaskRef)
     }
 })
