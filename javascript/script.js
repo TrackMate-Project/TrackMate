@@ -16,25 +16,25 @@ saveTask.addEventListener('submit', function(event){
     event.preventDefault();
 
     const description = document.getElementById('description')
-    const descriptionValue = description.value;
+    let descriptionValue = description.value;
 
     const dueDate = document.getElementById('dueDate');
-    const dueDateValue = dueDate.value;
+    let dueDateValue = dueDate.value;
 
-    const colorTag = document.getElementsByName('chooseColor');
-    const selectedColor = colorTag.value;
+    // const colorTag = document.getElementsByName('chooseColor');
+    // let selectedColor = colorTag.value;
 
     const newTask = {
             definition: descriptionValue,
             dueDate: dueDateValue,
-            colorTag: selectedColor
+            // colorTag: selectedColor
     }
 
     if(newTask) {
         update(taskRef, newTask);
         description.value = '';
         dueDateValue.value = '';
-        colorTag.value = '';
+        // colorTag.value = '';
     }
 
 })
@@ -50,9 +50,9 @@ onValue(taskRef, function(taskObj){
 
         for (let key in taskProperties) {
 
-            const definition = taskProperties[key].definition;
-            const dueDate = taskProperties[key].dueDate;
-            // const colorTag = taskProperties[key].colorTag;
+            let definition = taskProperties[key].definition;
+            let dueDate = taskProperties[key].dueDate;
+            // let colorTag = taskProperties[key].colorTag;
             // console.log(definition, dueDate, colorTag);
 
 
@@ -60,8 +60,11 @@ onValue(taskRef, function(taskObj){
             const pDate = document.createElement('p');
             const pTask = document.createElement('p');
 
-            li.innerHTML = pTask && pDate;
+            pTask.textContent = definition;
+            pDate.textContent = dueDate;
+            li.innerHTML = pTask, pDate;
             li.appendChild(document.createTextNode(taskProperties[key]));
+            // li.appendChild(pTask, pDate);
 
             newTaskUl.append(li);
 
