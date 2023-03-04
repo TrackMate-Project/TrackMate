@@ -1,5 +1,5 @@
 import app from "./firebase.js"
-import { getDatabase, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+import { getDatabase, ref, update, onValue, push } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 
 const database = getDatabase(app);
 const dbRef = ref(database);
@@ -21,20 +21,30 @@ saveTask.addEventListener('submit', function(event){
     const dueDate = document.getElementById('dueDate');
     let dueDateValue = dueDate.value;
 
-    // const colorTag = document.getElementsByName('chooseColor');
-    // let selectedColor = colorTag.value;
+
+    const colorTag = document.getElementsByName('chooseColor');
+    console.log(colorTag);
+    let colorValue 
+
+    colorTag.forEach(function(color){
+        if (color.checked) {
+            colorValue = color.value
+        }
+    })
+
+    console.log(colorValue)
 
     const newTask = {
             definition: descriptionValue,
             dueDate: dueDateValue,
-            // colorTag: selectedColor
+            colorTag: colorValue
     }
 
     if(newTask) {
-        update(taskRef, newTask);
+        push(taskRef, newTask);
         description.value = '';
-        dueDateValue.value = '';
-        // colorTag.value = '';
+        dueDate.value = '';
+        colorTag.value = '';
     }
 
 })
@@ -52,23 +62,21 @@ onValue(taskRef, function(taskObj){
 
             const definition = taskProperties[key].definition;
             const dueDate = taskProperties[key].dueDate;
-            // let colorTag = taskProperties[key].colorTag;
+            const colorTag = taskProperties[key].colorTag;
             // console.log(definition, dueDate, colorTag);
 
 
             const li = document.createElement('li');
             const pDate = document.createElement('p');
             const pTask = document.createElement('p');
-
-            // pTask.textContent = definition;
-            // pDate.textContent = dueDate;
+            
+            li.style.background = colorTag
+            console.log(colorTag);
+            
             li.innerHTML = 
-            `<p>${definition}</p>, 
+            `<p>${definition}</p> 
             <p>${dueDate}</p>
             <button>icon`
-
-            li.appendChild(document.createTextNode(taskProperties[key]));
-            // li.appendChild(pTask, pDate);
 
             newTaskUl.append(li);
 
