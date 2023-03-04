@@ -50,8 +50,8 @@ onValue(taskRef, function(taskObj){
 
         for (let key in taskProperties) {
 
-            let definition = taskProperties[key].definition;
-            let dueDate = taskProperties[key].dueDate;
+            const definition = taskProperties[key].definition;
+            const dueDate = taskProperties[key].dueDate;
             // let colorTag = taskProperties[key].colorTag;
             // console.log(definition, dueDate, colorTag);
 
@@ -60,9 +60,13 @@ onValue(taskRef, function(taskObj){
             const pDate = document.createElement('p');
             const pTask = document.createElement('p');
 
-            pTask.textContent = definition;
-            pDate.textContent = dueDate;
-            li.innerHTML = pTask, pDate;
+            // pTask.textContent = definition;
+            // pDate.textContent = dueDate;
+            li.innerHTML = 
+            `<p>${definition}</p>, 
+            <p>${dueDate}</p>
+            <button>icon`
+
             li.appendChild(document.createTextNode(taskProperties[key]));
             // li.appendChild(pTask, pDate);
 
