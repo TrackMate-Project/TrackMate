@@ -1,70 +1,80 @@
 import app from "./firebase.js"
-import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+import { getDatabase, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 
 const database = getDatabase(app);
 const dbRef = ref(database);
 
-const colorRef = ref(database, 'category')
-// console.log(colorRef);
+const colorRef = ref(database, '/category')
+const taskRef = ref(database, '/task')
 
-// const color1But = document.querySelector('#color1But');
-// const color2But = document.querySelector('#color2But');
-// const color3But = document.querySelector('#color3But');
+const newTaskUl = document.querySelector('.newTaskList')
 
-const colorButtons = document.querySelectorAll('.colorLegendBut');
+// Add event listener to the task form submit, and add the user input to database
+const saveTask = document.querySelector('#submitTask');
 
-const color1Input = document.querySelector('#color1');
-const color2Input = document.querySelector('#color2');
-const color3Input = document.querySelector('#color3');
+saveTask.addEventListener('submit', function(event){
+    event.preventDefault();
 
-const categoryRef = ref(database, `/category`);
+    const description = document.getElementById('description')
+    const descriptionValue = description.value;
 
-// color1But.addEventListener('click', function(){
-//     // .preventDefault();
+    const dueDate = document.getElementById('dueDate');
+    const dueDateValue = dueDate.value;
 
-//     const colorInput = color1Input.value.trim();
-    
-//     if (colorInput !== ""){
-//         const description = {
-//             color1: `${colorInput}`
-//         }
-//         console.log(description);
-//         update(categoryRef, description);
-//     } else {
-//         alert('Please enter a valid description! Do not leave the input empty')
-//     }
-// })
+    const colorTag = document.getElementsByName('chooseColor');
+    const selectedColor = colorTag.value;
 
-colorButtons.forEach(function(individualButton){
-    individualButton.addEventListener('click', function(){
-        const buttonValue = this.value;
-        console.log(typeof buttonValue);
-        console.log(buttonValue);
+    const newTask = {
+            definition: descriptionValue,
+            dueDate: dueDateValue,
+            colorTag: selectedColor
+    }
 
-        const colorInput = color1Input.value.trim();
-    
-        if (colorInput !== ""){ 
-            console.log(buttonValue);
-        
-            const description = {
-                [buttonValue] : `${colorInput}`
-            };
-            console.log(description);
-            update(categoryRef, description);
-            
-        } else {
-            alert('Please enter a valid description! Do not leave the input empty')
-        }
-        })
+    if(newTask) {
+        update(taskRef, newTask);
+        description.value = '';
+        dueDateValue.value = '';
+        colorTag.value = '';
+    }
+
 })
 
-// it's only targeting color1, it should target them all
+// Listen for changes on taskRef, and if any task added, append new object into ul
+
+onValue(taskRef, function(taskObj){      
+    if(taskObj.exists()){
+        const taskProperties = taskObj.val();
+        console.log(taskProperties);
+
+        newTaskUl.innerHTML = '';
+
+        for (let key in taskProperties) {
+
+            const definition = taskProperties[key].definition;
+            const dueDate = taskProperties[key].dueDate;
+            // const colorTag = taskProperties[key].colorTag;
+            // console.log(definition, dueDate, colorTag);
 
 
+            const li = document.createElement('li');
+            const pDate = document.createElement('p');
+            const pTask = document.createElement('p');
 
-// Pseudocode for Color Category
-// Define variable for button, and user input
-// Add event listener for click on the button that saves user input
-// Get user input and update the color property with that value on db - Do NOT clear the input, keep the data there. 
-// If user save/submit empty input, warn them. 
+            li.innerHTML = pTask && pDate;
+            li.appendChild(document.createTextNode(taskProperties[key]));
+
+            newTaskUl.append(li);
+
+        //     if (colorTag === color1) {
+        //         li.classList.toggle('yellowBackground')
+        //     } else if (colorTag === color2) {
+        //         li.classList.toggle('pinkBackground')
+        //     } else {
+        //         li.classList.toggle('blueBackground')
+        //     }
+        // }
+    }
+}
+    })
+
 
