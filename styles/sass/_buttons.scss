@@ -49,3 +49,21 @@ button {
        outline-color: green;
     }
 }
+
+.coolArrow {
+    border: none;
+    background: transparent;
+    i {
+        font-size: 2rem;
+        color: rgb(146, 178, 152);
+    }
+}
+
+.coolTrash {
+    border: none;
+    background: transparent;
+    i{
+        font-size: 1.8rem;
+        color: rgb(80, 78, 78);
+    }
+}

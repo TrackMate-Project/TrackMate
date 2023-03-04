@@ -329,6 +329,24 @@ button {
   outline-color: green;
 }
 
+.coolArrow {
+  border: none;
+  background: transparent;
+}
+.coolArrow i {
+  font-size: 2rem;
+  color: rgb(146, 178, 152);
+}
+
+.coolTrash {
+  border: none;
+  background: transparent;
+}
+.coolTrash i {
+  font-size: 1.8rem;
+  color: rgb(80, 78, 78);
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
