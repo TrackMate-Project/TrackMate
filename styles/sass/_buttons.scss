@@ -14,7 +14,7 @@ button {
 
 
 // radio buttons
-#colorOne {
+.colorOne {
     appearance: none;
     border-radius: 50%;
     border: 8px solid $color1;
@@ -26,7 +26,7 @@ button {
     }
 }
 
-#colorTwo {
+.colorTwo {
     appearance: none;
     border-radius: 50%;
     border: 8px solid $color2;
@@ -38,7 +38,7 @@ button {
     }
 }
 
-#colorThree {
+.colorThree {
     appearance: none;
     border-radius: 50%;
     border: 8px solid $color3;

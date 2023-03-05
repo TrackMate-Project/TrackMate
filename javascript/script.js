@@ -7,54 +7,55 @@ const dbRef = ref(database);
 const categoryRef = ref(database, '/category')
 const taskRef = ref(database, '/task')
 
+const colorButtons = document.querySelectorAll('.colorLegendBut');
+const categoryInput = document.querySelectorAll('.categoryInput');
+const colorLabel = document.querySelectorAll('.colorLabel')
+
 const newTaskUl = document.querySelector('.newTaskList')
 const inProgressTaskUl = document.querySelector('.inProgressTaskList')
 const completedTaskUl = document.querySelector('.completedTaskList')
 
-const colorButtons = document.querySelectorAll('.colorLegendBut');
-const categoryInput = document.querySelectorAll('.categoryInput');
+const saveTask = document.querySelector('#submitTask');
 
 // COLOR LEGEND
 colorButtons.forEach(function(individualButton){
     individualButton.addEventListener('click', function(){
-    console.log(this)
-    const buttonValue = this.value;
+        const buttonValue = this.value;
+        const colorInput = this.form[0].value.trim();
+        const parentDiv = this.parentElement;
 
-    const colorInput = this.form[0].value.trim();
-
-    if (colorInput !== ""){ 
-        const description = {
-            [buttonValue] : `${colorInput}`
-        };
-        console.log(description);
-        update(categoryRef, description);
+        if (colorInput !== ""){ 
+            const description = {
+                [buttonValue] : `${colorInput}`
+            };
+            update(categoryRef, description);
         
-    } else {
-        alert('Please enter a valid description! Do not leave the input empty')
-    }
+            parentDiv.style.display = "none"
+        } else {
+            alert('Please enter something! Do not leave the input empty')
+        }
+    })
+})
+
+colorLabel.forEach(function(label){
+    label.addEventListener('click', function(){
+        const inputDiv = this.nextElementSibling;
+        inputDiv.style.display = "inline-block"
     })
 })
 
     onValue(categoryRef, function (data) {
         const ourData = data.val();
-        console.log(ourData);
-        console.log(categoryInput);
 
         categoryInput.forEach(function (input) {
             for (let key in ourData) {
-                console.log(`${key}:${ourData[key]}`)
                 if (key === input.id) {
                     input.placeholder = ourData[key]
+                    input.labels[0].innerHTML = ourData[key]
                 }
             }
-            console.log(input)
-        }
-        )
+        })
     })
-
-    // Add event listener to the task form submit, and add the user input to database
-    const saveTask = document.querySelector('#submitTask');
-
 
 // NEW TASK INPUT
 saveTask.addEventListener('submit', function(event){
@@ -66,18 +67,13 @@ saveTask.addEventListener('submit', function(event){
     const dueDate = document.getElementById('dueDate');
     let dueDateValue = dueDate.value;
 
-
     const colorTag = document.getElementsByName('chooseColor');
-    console.log(colorTag);
-    let colorValue 
 
     colorTag.forEach(function(color){
         if (color.checked) {
             colorValue = color.value
         }
     })
-
-    console.log(colorValue)
 
     const newTask = {
             definition: descriptionValue,
@@ -92,7 +88,6 @@ saveTask.addEventListener('submit', function(event){
         dueDate.value = '';
         colorTag.value = '';
     }
-
 })
 
 onValue(taskRef, function(taskObj){
@@ -138,9 +133,7 @@ onValue(taskRef, function(taskObj){
     }
 })
 
-
-
-// Button event listeners
+// Change status button event listeners
 newTaskUl.addEventListener('click', function(event){
     if (event.target.tagName === "I"){
         const buttonValue = event.target.parentNode.value

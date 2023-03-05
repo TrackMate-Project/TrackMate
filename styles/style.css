@@ -293,7 +293,7 @@ button {
   border-radius: 10px;
 }
 
-#colorOne {
+.colorOne {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -301,11 +301,11 @@ button {
   border: 8px solid #FDFFAA;
   outline: 1px solid #FDFFAA;
 }
-#colorOne:checked, #colorOne:focus {
+.colorOne:checked, .colorOne:focus {
   outline-color: green;
 }
 
-#colorTwo {
+.colorTwo {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -313,11 +313,11 @@ button {
   border: 8px solid #FFAAEC;
   outline: 1px solid #FFAAEC;
 }
-#colorTwo:checked, #colorTwo:focus {
+.colorTwo:checked, .colorTwo:focus {
   outline-color: green;
 }
 
-#colorThree {
+.colorThree {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -325,7 +325,7 @@ button {
   border: 8px solid #A8D5FF;
   outline: 1px solid #A8D5FF;
 }
-#colorThree:checked, #colorThree:focus {
+.colorThree:checked, .colorThree:focus {
   outline-color: green;
 }
 
@@ -361,7 +361,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70%;
   margin: 0 auto;
 }
 
@@ -396,6 +395,9 @@ aside {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 aside h2 {
   font-size: 1rem;
@@ -406,57 +408,57 @@ aside h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 20px;
-}
-.formColorFlex .color1Form,
-.formColorFlex .color2Form,
-.formColorFlex .color3Form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 20px;
+}
+.formColorFlex form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 30%;
+  position: relative;
 }
-.formColorFlex .color1Form input,
-.formColorFlex .color2Form input,
-.formColorFlex .color3Form input {
+.formColorFlex form label {
+  cursor: text;
+}
+.formColorFlex form .inputContainer {
+  position: absolute;
+  left: 35px;
+  display: none;
+}
+.formColorFlex form .inputContainer input {
+  height: 30px;
   width: 150px;
+  border: none;
+  right: 33px;
 }
-.formColorFlex .color1Div,
-.formColorFlex .color2Div,
-.formColorFlex .color3Div {
+
+.color1Div,
+.color2Div,
+.color3Div {
   height: 30px;
   width: 30px;
+  margin-right: 5px;
 }
-.formColorFlex .color1Div {
+
+.color1Div {
   background-color: #FDFFAA;
-  border: 1px solid black;
 }
-.formColorFlex .color2Div {
+
+.color2Div {
   background-color: #FFAAEC;
-  border: 1px solid black;
 }
-.formColorFlex .color3Div {
+
+.color3Div {
   background-color: #A8D5FF;
-  border: 1px solid black;
 }
 
 main {
