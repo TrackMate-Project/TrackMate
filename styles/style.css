@@ -293,40 +293,30 @@ button {
   border-radius: 10px;
 }
 
-.colorOne {
+section.newTaskBox input[type=radio] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-radius: 50%;
+  cursor: pointer;
+}
+section.newTaskBox input[type=radio]:checked, section.newTaskBox input[type=radio]:focus {
+  outline-color: green;
+}
+
+.colorOne {
   border: 8px solid #FDFFAA;
   outline: 1px solid #FDFFAA;
 }
-.colorOne:checked, .colorOne:focus {
-  outline-color: green;
-}
 
 .colorTwo {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border-radius: 50%;
   border: 8px solid #FFAAEC;
   outline: 1px solid #FFAAEC;
 }
-.colorTwo:checked, .colorTwo:focus {
-  outline-color: green;
-}
 
 .colorThree {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border-radius: 50%;
   border: 8px solid #A8D5FF;
   outline: 1px solid #A8D5FF;
-}
-.colorThree:checked, .colorThree:focus {
-  outline-color: green;
 }
 
 .coolArrow {
@@ -365,6 +355,7 @@ header {
 }
 
 .mainHeading {
+  width: 100%;
   background-color: #E7DED7;
   font-family: "Raleway", sans-serif;
   font-size: 1.1rem;
@@ -383,6 +374,7 @@ header {
 }
 
 aside {
+  width: 100%;
   background-color: #E7DED7;
   font-family: "Raleway", sans-serif;
   border-radius: 15px;
@@ -408,9 +400,9 @@ aside h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -420,6 +412,9 @@ aside h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -535,8 +530,10 @@ div.newTaskFlex form input[type=text] {
   margin: 5px 0;
   width: 100%;
   border: 1px solid #ffffff;
-  border-radius: 10px;
   background-color: #ffffff;
+}
+div.newTaskFlex form input[type=date] {
+  display: inline-block;
 }
 div.newTaskFlex form fieldset {
   display: -webkit-box;

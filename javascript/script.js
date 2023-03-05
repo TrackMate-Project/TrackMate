@@ -44,30 +44,30 @@ colorLabel.forEach(function(label){
     })
 })
 
-    onValue(categoryRef, function (data) {
-        const ourData = data.val();
+onValue(categoryRef, function (data) {
+    const ourData = data.val();
 
-        categoryInput.forEach(function (input) {
-            for (let key in ourData) {
-                if (key === input.id) {
-                    input.placeholder = ourData[key]
-                    input.labels[0].innerHTML = ourData[key]
-                }
+    categoryInput.forEach(function (input) {
+        for (let key in ourData) {
+            if (key === input.id) {
+                input.placeholder = ourData[key]
+                input.labels[0].innerHTML = ourData[key]
             }
-        })
+        }
     })
+})
 
 // NEW TASK INPUT
+const description = document.getElementById('description')
+const dueDate = document.getElementById('dueDate');
+const colorTag = document.getElementsByName('chooseColor');
+
 saveTask.addEventListener('submit', function(event){
     event.preventDefault();
 
-    const description = document.getElementById('description')
     let descriptionValue = description.value;
-
-    const dueDate = document.getElementById('dueDate');
     let dueDateValue = dueDate.value;
-
-    const colorTag = document.getElementsByName('chooseColor');
+    let colorValue
 
     colorTag.forEach(function(color){
         if (color.checked) {
@@ -91,12 +91,12 @@ saveTask.addEventListener('submit', function(event){
 })
 
 onValue(taskRef, function(taskObj){
+    newTaskUl.innerHTML = '';
+    inProgressTaskUl.innerHTML = '';
+    completedTaskUl.innerHTML = '';
+
     if(taskObj.exists()){
         const taskProperties = taskObj.val();
-
-        newTaskUl.innerHTML = '';
-        inProgressTaskUl.innerHTML = '';
-        completedTaskUl.innerHTML = '';
 
         for (let key in taskProperties){
             const definition = taskProperties[key].definition;
@@ -130,7 +130,7 @@ onValue(taskRef, function(taskObj){
                 completedTaskUl.append(completedLi)
             }
         }
-    }
+    } 
 })
 
 // Change status button event listeners

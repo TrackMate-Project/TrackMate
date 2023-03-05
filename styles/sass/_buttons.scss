@@ -14,41 +14,33 @@ button {
 
 
 // radio buttons
-.colorOne {
+section.newTaskBox input[type=radio] {
     appearance: none;
     border-radius: 50%;
-    border: 8px solid $color1;
-    outline: 1px solid $color1;
-
+    cursor: pointer;
+    
     &:checked,
     &:focus {
        outline-color: green;
     }
+}
+
+.colorOne {
+    border: 8px solid $color1;
+    outline: 1px solid $color1;
 }
 
 .colorTwo {
-    appearance: none;
-    border-radius: 50%;
     border: 8px solid $color2;
     outline: 1px solid $color2;
-
-    &:checked,
-    &:focus {
-       outline-color: green;
-    }
 }
 
 .colorThree {
-    appearance: none;
-    border-radius: 50%;
     border: 8px solid $color3;
     outline: 1px solid $color3;
-
-    &:checked,
-    &:focus {
-       outline-color: green;
-    }
 }
+// radio buttons
+
 
 .coolArrow {
     border: none;

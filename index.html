@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="mainHeading wrapper">
+    <header class="wrapper">
+        <div class="mainHeading">
             <h1>TrackMate✔</h1>
         </div>
         <!-- ASIDE TO HAVE FLEX COLUMN -->
-        <aside class="formColorContainer wrapper">
+        <aside class="formColorContainer">
             <h2>Click on label to assign a category name!</h2>
             <!-- DIV FORM CONTAINER TO HAVE FLEX ROW -->
             <div class="formColorFlex">
@@ -31,7 +31,7 @@
                     <div class="color1Div"></div>
                     <label for="color1" class="colorLabel">Category 1</label>
                     <div class="inputContainer">
-                        <input type="text" id="color1" class="categoryInput" placeholder="Category 1">
+                        <input type="text" id="color1" class="categoryInput" placeholder="Category 1" title="Define a task category (e.g. urgent)">
                         <button class="colorLegendBut" id="color1But" value="color1">
                             <i class="fa-solid fa-check"></i>
                         </button>
@@ -42,7 +42,7 @@
                     <div class="color2Div"></div>
                     <label for="color2" class="colorLabel">Category 2</label>
                     <div class="inputContainer">
-                        <input type="text" id="color2" class="categoryInput" placeholder="Category 2">
+                        <input type="text" id="color2" class="categoryInput" placeholder="Category 2" title="Define a task category (e.g. urgent)">
                         <button class="colorLegendBut" id="color2But" value="color2">
                             <i class="fa-solid fa-check"></i>
                         </button>
@@ -55,16 +55,13 @@
                     <label for="color3" class="colorLabel">Category 3</label>
                     <div class="inputContainer">
                         <input type="text" id="color3" class="categoryInput" placeholder="Category 3">
-                        <button class="colorLegendBut" id="color3But" value="color3">
+                        <button class="colorLegendBut" id="color3But" value="color3" title="Define a task category (e.g. urgent)">
                             <i class="fa-solid fa-check"></i>
                         </button>
                     </div>
-                    
                 </form>
             </div>
-
         </aside>
-
     </header>
 
     <main class="wrapper">
@@ -73,31 +70,28 @@
             <h3>NEW TASKS</h3>
             <div class="newTaskFlex">
                 <form action="#" method="#" id="submitTask">
-                    <label for="description" class="sr-only">Enter a new task here</label>
-                    <input type="text" id="description" placeholder="Enter a new task here">
+                    <label for="description">New task description:</label>
+                    <input type="text" id="description" placeholder="Description">
                     
-                    <label for="dueDate" class="sr-only">Enter a due date here</label>
-                    <input type="text" id="dueDate" placeholder="Enter a due date here">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" title="Select a due date">
     
                     <fieldset>
                         <legend>Choose a color:</legend>
-                        <label for="colorOne" class="sr-only"></label>
+                        <label for="colorOne" class="sr-only">color 1</label>
                         <input type="radio" id="colorOne" class="colorOne" value="#FDFFAA" name="chooseColor">
 
-                        <label for="colorTwo" class="sr-only"></label>
+                        <label for="colorTwo" class="sr-only">color 2</label>
                         <input type="radio" id="colorTwo" class="colorTwo" value="#FFAAEC" name="chooseColor">
 
-                        <label for="colorThree" class="sr-only"></label>
+                        <label for="colorThree" class="sr-only">color 3</label>
                         <input type="radio" id="colorThree" class="colorThree" value="#A8D5FF" name="chooseColor">
                     </fieldset>
-                    
+
                     <button id="saveTaskBut" type="sumbit">Save it!</button>
                 </form>
                 <ul class="newTaskList">
-                    <!-- new tasks will be displayed here after submitted -->
-                    <!-- <li>
-                        <p>Skin-care Routine<br>2023-03-12</p>
-                    </li> -->
+                    <!-- Empty ul to insert new tasks -->
                 </ul>
             </div>
         </section>
