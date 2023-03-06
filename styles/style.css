@@ -310,8 +310,8 @@ section.newTaskBox input[type=radio]:checked, section.newTaskBox input[type=radi
 }
 
 .colorTwo {
-  border: 8px solid #cf98bd;
-  outline: 1px solid #cf98bd;
+  border: 8px solid #b698be;
+  outline: 1px solid #b698be;
 }
 
 .colorThree {
@@ -351,7 +351,7 @@ header {
 }
 
 .mainHeading {
-  color: rgb(240, 231, 209);
+  color: rgb(238, 224, 209);
   font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
   text-align: left;
@@ -452,7 +452,7 @@ aside h2 {
 }
 
 .color2Div {
-  background-color: #cf98bd;
+  background-color: #b698be;
 }
 
 .color3Div {
@@ -564,6 +564,7 @@ div.newTaskFlex form input[type=text] {
 }
 div.newTaskFlex form input[type=date] {
   display: inline-block;
+  opacity: 0.85;
 }
 div.newTaskFlex form fieldset {
   display: -webkit-box;
@@ -577,6 +578,7 @@ div.newTaskFlex form fieldset {
 div.newTaskFlex form button {
   -ms-flex-item-align: center;
       align-self: center;
+  opacity: 0.85;
 }
 
 footer {

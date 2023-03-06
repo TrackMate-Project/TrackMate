@@ -21,9 +21,10 @@ const saveTask = document.querySelector('#submitTask');
 colorButtons.forEach(function(individualButton){
     individualButton.addEventListener('click', function(){
         const buttonValue = this.value;
-        const colorInput = this.form[0].value.trim();
-        const parentDiv = this.parentElement;
         const siblingInput = this.previousElementSibling
+        const colorInput = siblingInput.value.trim();
+        const parentDiv = this.parentElement;
+
 
         if (colorInput !== ""){ 
             const description = {
@@ -42,11 +43,10 @@ colorButtons.forEach(function(individualButton){
 colorLabel.forEach(function(label){
     label.addEventListener('click', function(){
         const inputDiv = this.nextElementSibling;
-        console.log(this)
         this.style.visibility = "hidden";
         inputDiv.style.display = "inline-block"
     })
-    label.addEventListener('keydown', function(){
+    label.addEventListener('keydown', function(event){
         if (event.keyCode === 32){
             const inputDiv = this.nextElementSibling;
             this.style.visibility = "hidden";
