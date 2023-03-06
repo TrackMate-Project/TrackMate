@@ -285,7 +285,7 @@ button {
   cursor: pointer;
 }
 
-#saveTaskBut {
+.saveTaskBut {
   width: 112px;
   background-color: #ffffff;
   margin-top: 5px;
