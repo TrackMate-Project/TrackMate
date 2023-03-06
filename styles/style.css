@@ -305,18 +305,18 @@ section.newTaskBox input[type=radio]:checked, section.newTaskBox input[type=radi
 }
 
 .colorOne {
-  border: 8px solid #FDFFAA;
-  outline: 1px solid #FDFFAA;
+  border: 8px solid #e4d68a;
+  outline: 1px solid #e4d68a;
 }
 
 .colorTwo {
-  border: 8px solid #FFAAEC;
-  outline: 1px solid #FFAAEC;
+  border: 8px solid #cf98bd;
+  outline: 1px solid #cf98bd;
 }
 
 .colorThree {
-  border: 8px solid #A8D5FF;
-  outline: 1px solid #A8D5FF;
+  border: 8px solid #8eb0cf;
+  outline: 1px solid #8eb0cf;
 }
 
 .coolArrow {
@@ -324,8 +324,8 @@ section.newTaskBox input[type=radio]:checked, section.newTaskBox input[type=radi
   background: transparent;
 }
 .coolArrow i {
-  font-size: 2rem;
-  color: rgb(146, 178, 152);
+  font-size: 1.8rem;
+  color: rgba(143, 124, 109, 0.6);
 }
 
 .coolTrash {
@@ -341,13 +341,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -355,30 +351,23 @@ header {
 }
 
 .mainHeading {
-  width: 100%;
-  background-color: #E7DED7;
+  color: rgb(240, 231, 209);
   font-family: "Raleway", sans-serif;
-  font-size: 1.1rem;
-  border-radius: 15px;
-  margin: 50px;
+  font-size: 1.5rem;
+  text-align: left;
   height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin: 0 25px;
+}
+.mainHeading h1 {
+  margin: 20px 0 0 0;
 }
 
 aside {
-  width: 100%;
-  background-color: #E7DED7;
+  width: 58%;
+  background-color: rgba(231, 222, 215, 0.7);
   font-family: "Raleway", sans-serif;
   border-radius: 15px;
-  margin: 20px;
+  margin-top: 70px;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -394,6 +383,8 @@ aside {
 aside h2 {
   font-size: 1rem;
   margin: 0 auto;
+  font-weight: 100;
+  margin-bottom: 10px;
 }
 
 .formColorFlex {
@@ -406,54 +397,66 @@ aside h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .formColorFlex form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 30%;
+  min-width: 160px;
   position: relative;
+  margin: 5px 0;
+  padding-left: 3px;
 }
 .formColorFlex form label {
   cursor: text;
+  font-weight: bold;
 }
 .formColorFlex form .inputContainer {
+  width: 80%;
+  min-width: 130px;
   position: absolute;
-  left: 35px;
+  left: 38px;
   display: none;
+  z-index: 1;
 }
 .formColorFlex form .inputContainer input {
+  width: 73%;
   height: 30px;
-  width: 150px;
+  margin: 0;
+  padding: 0;
   border: none;
-  right: 33px;
+}
+.formColorFlex form .inputContainer button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
 }
 
 .color1Div,
 .color2Div,
 .color3Div {
   height: 30px;
-  width: 30px;
+  min-width: 30px;
   margin-right: 5px;
 }
 
 .color1Div {
-  background-color: #FDFFAA;
+  background-color: #e4d68a;
 }
 
 .color2Div {
-  background-color: #FFAAEC;
+  background-color: #cf98bd;
 }
 
 .color3Div {
-  background-color: #A8D5FF;
+  background-color: #8eb0cf;
 }
 
 main {
@@ -471,8 +474,8 @@ main {
 }
 main section {
   width: 32%;
-  min-height: 500px;
-  padding: 10px;
+  min-height: 560px;
+  padding: 15px 10px;
   border-radius: 15px;
   background-color: #E7DED7;
   display: -webkit-box;
@@ -485,14 +488,43 @@ main section {
   -ms-flex-line-pack: center;
       align-content: center;
 }
-main section ul {
-  width: 90%;
-  padding: 0;
-  margin: 0 auto;
-}
 main section h3 {
   margin: 0;
   text-align: center;
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+}
+main section ul {
+  width: 90%;
+  padding: 0;
+  margin: 10px auto;
+}
+main section ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin: 5px;
+  width: 100%;
+}
+main section .pContainer {
+  width: 80%;
+}
+main section .pContainer p {
+  width: 90%;
+  font-size: 0.8rem;
+  margin: 5px 0;
 }
 
 div.newTaskFlex {
@@ -512,8 +544,8 @@ div.newTaskFlex form {
   width: 90%;
   margin: 0 auto;
   padding: 10px;
-  background-color: #FED4B3;
-  border: 1px solid black;
+  background-color: #c5bbb2;
+  border: 1px solid rgba(112, 96, 73, 0.6);
   border-radius: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -522,15 +554,13 @@ div.newTaskFlex form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 div.newTaskFlex form input[type=text] {
-  margin: 5px 0;
+  margin: 5px 0 10px 0;
   width: 100%;
   border: 1px solid #ffffff;
   background-color: #ffffff;
+  opacity: 0.85;
 }
 div.newTaskFlex form input[type=date] {
   display: inline-block;
@@ -542,33 +572,11 @@ div.newTaskFlex form fieldset {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-top: 10px;
 }
-
-main section li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 12px;
-  padding: 10px;
-  margin: 5px;
-  width: 100%;
-}
-main .pContainer {
-  width: 70%;
-}
-main .pContainer p {
-  width: 90%;
-  font-size: 0.8rem;
+div.newTaskFlex form button {
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 footer {
@@ -590,39 +598,12 @@ footer div {
           align-items: center;
 }
 
-@media (max-width: 1200px) {
-  .formColorFlex {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .formColorFlex .color1Form,
-  .formColorFlex .color2Form,
-  .formColorFlex .color3Form {
-    margin: 10px;
-    width: 50%;
-  }
-  .formColorFlex .color1Form input,
-  .formColorFlex .color2Form input,
-  .formColorFlex .color3Form input {
-    width: 100px;
-  }
-}
 @media (max-width: 840px) {
-  .formColorFlex .color1Form,
-  .formColorFlex .color2Form,
-  .formColorFlex .color3Form {
-    width: 100%;
-  }
   body {
-    font-size: 0.6rem;
-  }
-  body h1 {
     font-size: 0.8rem;
   }
   body h2 {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
   body ::-webkit-input-placeholder {
     font-size: 0.6rem;
@@ -639,6 +620,19 @@ footer div {
   body ::placeholder {
     font-size: 0.6rem;
   }
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header aside {
+    width: 100%;
+    margin: 25px 0;
+  }
+  header aside .inputContainer {
+    min-width: 127px;
+  }
   main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -650,22 +644,15 @@ footer div {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 0px;
   }
   main section {
-    width: 90%;
+    width: 100%;
     min-height: 400px;
     margin: 10px;
   }
-  main .newTaskBox {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  main .newTaskBox .newTaskFlex {
-    width: 60%;
+  main .newTaskFlex {
+    width: 100%;
   }
 }
 @media (max-width: 400px) {
@@ -677,12 +664,6 @@ footer div {
   }
   header .mainHeading {
     margin: 30px;
-  }
-  main {
-    padding: 30px 0;
-  }
-  main .newTaskBox .newTaskFlex {
-    width: 85%;
   }
   footer div {
     padding: 8px;

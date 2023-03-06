@@ -23,6 +23,7 @@ colorButtons.forEach(function(individualButton){
         const buttonValue = this.value;
         const colorInput = this.form[0].value.trim();
         const parentDiv = this.parentElement;
+        const siblingInput = this.previousElementSibling
 
         if (colorInput !== ""){ 
             const description = {
@@ -31,6 +32,7 @@ colorButtons.forEach(function(individualButton){
             update(categoryRef, description);
         
             parentDiv.style.display = "none"
+            siblingInput.labels[0].style.visibility = "visible"
         } else {
             alert('Please enter something! Do not leave the input empty')
         }
@@ -40,8 +42,18 @@ colorButtons.forEach(function(individualButton){
 colorLabel.forEach(function(label){
     label.addEventListener('click', function(){
         const inputDiv = this.nextElementSibling;
+        console.log(this)
+        this.style.visibility = "hidden";
         inputDiv.style.display = "inline-block"
     })
+    label.addEventListener('keydown', function(){
+        if (event.keyCode === 32){
+            const inputDiv = this.nextElementSibling;
+            this.style.visibility = "hidden";
+            inputDiv.style.display = "inline-block"
+        }
+    })
+    
 })
 
 onValue(categoryRef, function (data) {
@@ -82,11 +94,13 @@ saveTask.addEventListener('submit', function(event){
             status: "newTask"
     }
 
-    if(newTask) {
+    if(descriptionValue.trim() !== "") {
         push(taskRef, newTask);
         description.value = '';
         dueDate.value = '';
         colorTag.value = '';
+    } else {
+        alert('You forgot to describe the task!')
     }
 })
 

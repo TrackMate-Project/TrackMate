@@ -2,68 +2,84 @@
 
 header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
 }
 
 .mainHeading {
-    width: 100%;
-    background-color: $background;
+    color: rgb(240, 231, 209);
     font-family: $baseFont;
-    font-size: 1.1rem;
-    border-radius: 15px;
-    margin: 50px;
+    font-size: 1.5rem;
+    text-align: left;
     height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 25px;
+
+    h1 {
+        margin: 20px 0 0 0;
+    }
 }
 
 aside {
-    h2 {
-        font-size: 1rem;
-        margin: 0 auto;
-    }
-    width: 100%;
-    background-color: $background;
+    width: 58%;
+    background-color: $colorLegendBack;
     font-family: $baseFont;
     border-radius: 15px;
-    margin: 20px;
+    margin-top: 70px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    h2 {
+        font-size: 1rem;
+        margin: 0 auto;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
 }
 
 .formColorFlex {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    flex-wrap: wrap;
 
     form {
         display: flex;
-        justify-content: center;
         align-items: center;
         width: 30%;
+        min-width: 160px;
         position: relative;
+        margin: 5px 0;
+        padding-left: 3px;
 
         label {
             cursor: text;
+            font-weight: bold;
         }
 
         .inputContainer {
+            width: 80%;
+            min-width: 130px;
             position: absolute;
-            left: 35px;
+            left: 38px;
             display: none;
+            z-index: 1;
         
             input {
+                width: 73%;
                 height: 30px;
-                width: 150px;
+                margin: 0;
+                padding: 0;
                 border: none;
-                right: 33px;
+            }
+
+            button {
+                width: 30px;
+                height: 30px;
+                padding: 0;
+                border: none;
             }
         }
     }
@@ -73,7 +89,7 @@ aside {
 .color2Div,
 .color3Div {
     height: 30px;
-    width: 30px;
+    min-width: 30px;
     margin-right: 5px;
 }
 .color1Div{

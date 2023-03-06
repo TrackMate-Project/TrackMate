@@ -2,61 +2,61 @@
 
 
 // max-width 1200px 
-@media (max-width: 1200px) {
-    .formColorFlex {
-        flex-direction: column;
-        .color1Form,
-        .color2Form,
-        .color3Form {
-            margin: 10px;
-            width: 50%;
-            input {
-                width: 100px;
-            }
-        }
-    }
-}
+// @media (max-width: 1200px) {
+//     .formColorFlex {
+//         flex-direction: column;
+//         .color1Form,
+//         .color2Form,
+//         .color3Form {
+//             margin: 10px;
+//             width: 50%;
+//             input {
+//                 width: 100px;
+//             }
+//         }
+//     }
+// }
 
 
 // max-width 840px 
 @media (max-width: 840px) {
-    .formColorFlex {
-        .color1Form,
-        .color2Form,
-        .color3Form {
-            width: 100%;
-        }
-    }
     body {
-        font-size: 0.6rem;
-        h1 {
-            font-size: 0.8rem;
-        }
+        font-size: 0.8rem;
         h2{
-            font-size: 0.7rem;
+            font-size: 0.9rem;
         }
         ::placeholder {
             font-size: 0.6rem;
         }
     }
-    main {
+
+    header {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        section {
-            width: 90%;
-            min-height: 400px;
-            margin: 10px;
-        }
-        .newTaskBox {
-            justify-content: space-between;
-            align-items: center;
-            .newTaskFlex {
-                width: 60%;
+
+        aside {
+            width: 100%;
+            margin: 25px 0;
+
+            .inputContainer {
+                min-width: 127px;
             }
         }
     }
 
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        section {
+            width: 100%;
+            min-height: 400px;
+            margin: 10px;
+        }
+            .newTaskFlex {
+                width: 100%;
+            }
+    }
 }
 
 // max-width 400px 
@@ -66,19 +66,12 @@
     }
     aside {
         width: 90%;
+
     }
     header {
         .mainHeading {
             margin: 30px;
         }
-    }
-    main {
-        padding: 30px 0;
-    .newTaskBox {
-        .newTaskFlex {
-            width: 85%;
-        }
-    }
     }
     footer {
         div {

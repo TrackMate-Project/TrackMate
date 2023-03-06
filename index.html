@@ -12,7 +12,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,700&family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="./styles/style.css">
 </head>
@@ -23,13 +23,13 @@
         </div>
         <!-- ASIDE TO HAVE FLEX COLUMN -->
         <aside class="formColorContainer">
-            <h2>Click on label to assign a category name!</h2>
+            <h2>Click on label to assign a category name!  <i class="fa-regular fa-circle-question" title="for keyboard users: select the category name with tab and press space to edit!"></i></h2>
             <!-- DIV FORM CONTAINER TO HAVE FLEX ROW -->
             <div class="formColorFlex">
             <!-- FORM TO SUBMIT COLOR-1 -->
                 <form action="#" method="#" class="color1Form">
                     <div class="color1Div"></div>
-                    <label for="color1" class="colorLabel">Category 1</label>
+                    <label for="color1" class="colorLabel" tabindex="0">Category 1</label>
                     <div class="inputContainer">
                         <input type="text" id="color1" class="categoryInput" placeholder="Category 1" title="Define a task category (e.g. urgent)">
                         <button class="colorLegendBut" id="color1But" value="color1">
@@ -40,7 +40,7 @@
                 <!-- FORM TO SUBMIT COLOR-2 -->
                 <form action="#" method="#" class="color2Form">
                     <div class="color2Div"></div>
-                    <label for="color2" class="colorLabel">Category 2</label>
+                    <label for="color2" class="colorLabel" tabindex="0">Category 2</label>
                     <div class="inputContainer">
                         <input type="text" id="color2" class="categoryInput" placeholder="Category 2" title="Define a task category (e.g. urgent)">
                         <button class="colorLegendBut" id="color2But" value="color2">
@@ -52,7 +52,7 @@
                 <!-- FORM TO SUBMIT COLOR-3 -->
                 <form action="#" method="#" class="color3Form">
                     <div class="color3Div"></div>
-                    <label for="color3" class="colorLabel">Category 3</label>
+                    <label for="color3" class="colorLabel" tabindex="0">Category 3</label>
                     <div class="inputContainer">
                         <input type="text" id="color3" class="categoryInput" placeholder="Category 3">
                         <button class="colorLegendBut" id="color3But" value="color3" title="Define a task category (e.g. urgent)">
@@ -67,26 +67,28 @@
     <main class="wrapper">
         <!-- SECTION TO SUBMIT AND DISPLAY NEW TASKS -->
         <section class="newTaskBox">
-            <h3>NEW TASKS</h3>
+            <h3>New Tasks</h3>
             <div class="newTaskFlex">
                 <form action="#" method="#" id="submitTask">
                     <label for="description">New task description:</label>
                     <input type="text" id="description" placeholder="Description">
                     
-                    <label for="dueDate">Due Date:</label>
-                    <input type="date" id="dueDate" title="Select a due date">
+                    <div class="selectorContainer">
+                        <label for="dueDate">Due Date:</label>
+                        <input type="date" id="dueDate" title="Select a due date">
+        
+                        <fieldset>
+                            <legend>Choose a color:</legend>
+                            <label for="colorOne" class="sr-only">color 1</label>
+                            <input type="radio" id="colorOne" class="colorOne" value="#e4d68a" name="chooseColor">
     
-                    <fieldset>
-                        <legend>Choose a color:</legend>
-                        <label for="colorOne" class="sr-only">color 1</label>
-                        <input type="radio" id="colorOne" class="colorOne" value="#FDFFAA" name="chooseColor">
-
-                        <label for="colorTwo" class="sr-only">color 2</label>
-                        <input type="radio" id="colorTwo" class="colorTwo" value="#FFAAEC" name="chooseColor">
-
-                        <label for="colorThree" class="sr-only">color 3</label>
-                        <input type="radio" id="colorThree" class="colorThree" value="#A8D5FF" name="chooseColor">
-                    </fieldset>
+                            <label for="colorTwo" class="sr-only">color 2</label>
+                            <input type="radio" id="colorTwo" class="colorTwo" value="#cf98bd" name="chooseColor">
+    
+                            <label for="colorThree" class="sr-only">color 3</label>
+                            <input type="radio" id="colorThree" class="colorThree" value="#8eb0cf" name="chooseColor">
+                        </fieldset>
+                    </div>
 
                     <button id="saveTaskBut" type="sumbit">Save it!</button>
                 </form>
@@ -98,7 +100,7 @@
 
         <!-- SECTION TO DISPLAY IN-PROGRESS TASKS -->
         <section class="inProgressBox">
-            <h3>IN-PROGRESS TASKS</h3>
+            <h3>In-progress Tasks</h3>
             <ul class="inProgressTaskList">
             <!-- button from newTaskList will move li here -->
             </ul>
@@ -106,7 +108,7 @@
 
         <!-- THIS SECTION IS STRETCH GOAL // COMPLETED TASKS  -->
         <section class="completedTaskBox">
-            <h3>COMPLETED TASKS</h3>
+            <h3>Completed Tasks</h3>
             <ul class="completedTaskList">
                 <!-- button from in-progress task list will move li here -->
             </ul>
@@ -114,8 +116,8 @@
 
     </main>
 
-    <footer>
-        <div class="wrapper">
+    <footer class="wrapper">
+        <div>
             <p>Copyright Katie & Selda -- Created at <a href="https://junocollege.com/">Juno College</a>
             </p>
         </div>

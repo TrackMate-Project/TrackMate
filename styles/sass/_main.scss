@@ -8,24 +8,47 @@ main {
 
     section {
         width: 32%;
-        min-height: 500px;
-        padding: 10px;
+        min-height: 560px;
+        padding: 15px 10px;
         border-radius: 15px;
         background-color: $background;
         display: flex;
         flex-direction: column;
         align-content: center;
-        ul {
-            width: 90%;
-            padding: 0;
-            margin: 0 auto;
-        }
+
         h3 {
             margin: 0;
             text-align: center;
+            font-family: $titleFont;
+            font-size: 1rem;
+        }
+
+        ul {
+            width: 90%;
+            padding: 0;
+            margin: 10px auto;
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 12px;
+                padding: 10px 15px;
+                margin: 5px;
+                width: 100%;
+            }
+        }
+        .pContainer {
+            width: 80%;
+            p{
+                width: 90%;
+                font-size: 0.8rem;
+                margin: 5px 0;
+            }
         }
     }
 }
+
 
 div.newTaskFlex {
     height: 100%;
@@ -39,17 +62,17 @@ div.newTaskFlex {
         margin: 0 auto;
         padding: 10px;
         background-color: $newTaskFormBack;
-        border: 1px solid black;
+        border: 1px solid rgba(112, 96, 73, 0.6);
         border-radius: 12px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
+
         input[type="text"] {
-            margin: 5px 0;
+            margin: 5px 0 10px 0;
             width: 100%;
             border: 1px solid $inputColor;
             background-color: $inputColor;
+            opacity: 0.85;
         }
 
         input[type="date"] {
@@ -59,29 +82,11 @@ div.newTaskFlex {
         fieldset {
             display: flex;
             justify-content: space-evenly;
+            margin-top: 10px;
         }
-    }
-}
 
-// When new task added, li styles apply
-main{
-    section {
-        li {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 12px;
-            padding: 10px;
-            margin: 5px;
-            width: 100%;
+        button {
+            align-self: center;
         }
-    }
-    .pContainer {
-            width: 70%;
-            p{
-                width: 90%;
-                font-size: 0.8rem;
-            }
     }
 }
