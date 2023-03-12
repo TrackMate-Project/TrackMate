@@ -19,7 +19,8 @@ const saveTask = document.querySelector('#submitTask');
 
 // COLOR LEGEND
 colorButtons.forEach(function(individualButton){
-    individualButton.addEventListener('click', function(){
+    individualButton.addEventListener('click', function(event){
+        event.preventDefault();
         const buttonValue = this.value;
         const siblingInput = this.previousElementSibling
         const colorInput = siblingInput.value.trim();
